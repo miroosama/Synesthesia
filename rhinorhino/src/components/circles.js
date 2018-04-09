@@ -4,6 +4,8 @@ import {withFauxDOM} from 'react-faux-dom'
 import { connect } from "react-redux"
 import { selectColor } from '../actions/actions'
 import CircleSounds from './circleSounds'
+import { Route, Switch, Link } from 'react-router-dom'
+
 class Circles extends Component{
   componentDidMount () {
     const faux = this.props.connectFauxDOM('div', 'circle')
@@ -25,7 +27,7 @@ handleClick = (e) => {
   // console.log(e.target.attributes[0].value)
   this.props.selectColor(e.target.attributes[0].value)
 }
-// 
+//
 // handleNext = (e) => {
 //   e.preventDefault()
 //
@@ -51,6 +53,7 @@ handleClick = (e) => {
       <circle onClick={this.handleClick} value="yellow" cx="500" cy="60" r="10"></circle>
       </svg>
       <CircleSounds />
+      <Link to={ "/taste"}>Next</Link>
       </div>
     )
   }
