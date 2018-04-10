@@ -64,4 +64,5 @@ return{
   color: state.color
 }
 }
+
 export default connect(mapStateToProps, { selectColor })(withFauxDOM(Circles))

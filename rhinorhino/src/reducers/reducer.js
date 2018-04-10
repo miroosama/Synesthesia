@@ -1,6 +1,5 @@
 const defaultState = {
   color: {},
-  foodPlaces: {}
 }
 
 
