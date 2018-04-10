@@ -99,9 +99,9 @@ let depth = this.props.shapeSpeed/10
         width={50}
         height={50}
         depth={50}
-        widthSegments={4}
-        heightSegments={4}
-        depthSegments={4}
+        widthSegments={2}
+        heightSegments={2}
+        depthSegments={2}
       />
 
           <meshBasicMaterial
@@ -117,9 +117,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -135,9 +135,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -153,9 +153,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -171,9 +171,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -189,9 +189,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -207,9 +207,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -221,13 +221,9 @@ let depth = this.props.shapeSpeed/10
           rotation={this.state.coneRotation}
           position={this.objectPosition[7]}
         >
-        <boxGeometry
-          width={50}
-          height={50}
-          depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+        <tetrahedronGeometry
+          radius={35}
+          detail={1}
         />
 
           <meshBasicMaterial
@@ -243,9 +239,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -261,9 +257,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -279,9 +275,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -297,9 +293,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -315,9 +311,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -333,9 +329,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -351,9 +347,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -369,9 +365,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -387,9 +383,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -405,9 +401,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -423,9 +419,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -441,9 +437,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -459,9 +455,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -477,9 +473,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -495,9 +491,9 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
@@ -513,9 +509,171 @@ let depth = this.props.shapeSpeed/10
           width={50}
           height={50}
           depth={50}
-          widthSegments={4}
-          heightSegments={4}
-          depthSegments={4}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[24]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[25]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[26]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[27]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[28]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[29]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[30]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[31]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
+        />
+
+          <meshBasicMaterial
+            wireframe={true}
+            color={0x00ff00}
+          />
+        </mesh>
+        <mesh
+          rotation={this.state.coneRotation}
+          position={this.objectPosition[32]}
+        >
+        <boxGeometry
+          width={50}
+          height={50}
+          depth={50}
+          widthSegments={2}
+          heightSegments={2}
+          depthSegments={2}
         />
 
           <meshBasicMaterial
