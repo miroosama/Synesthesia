@@ -4,6 +4,10 @@ import { Route, Switch, Link } from 'react-router-dom'
 import CircleSounds from './components/circleSounds'
 import Taste from './components/taste'
 import Data from './components/data'
+import Numbers from './components/numbers'
+import React3 from 'react-three-renderer';
+import * as THREE from 'three';
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Circles}  />
           <Route path="/taste" component={Taste} />
+          <Route path="/numbers" component={Numbers} />
           <Route path="/data" component={Data} />
         </Switch>
       </div>

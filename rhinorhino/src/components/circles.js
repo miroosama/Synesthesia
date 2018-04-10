@@ -37,20 +37,20 @@ handleClick = (e) => {
   render(){
     let circle1 = d3.select("circle:nth-child(1n)")
     circle1.style("fill", "royalblue")
-    circle1.attr("r", 50)
+    circle1.attr("r", 125)
     let circle2 = d3.select("circle:nth-child(2n)")
     circle2.style("fill", "orangered");
-    circle2.attr("r", 50);
+    circle2.attr("r", 125);
     let circle3 = d3.select("circle:nth-child(3n)")
     circle3.style("fill", "yellow")
-    circle3.attr("r", 50)
+    circle3.attr("r", 125)
     console.log(this.props)
     return(
       <div>
-      <svg width="720" height="120">
-      <circle onClick={this.handleClick} name="blue" cx="100" cy="60" r="10"></circle>
-      <circle onClick={this.handleClick} value="red" cx="300" cy="60" r="10"></circle>
-      <circle onClick={this.handleClick} value="yellow" cx="500" cy="60" r="10"></circle>
+      <svg width="1100" height="575">
+      <circle onClick={this.handleClick} name="blue" cx="150" cy="250" r="10"></circle>
+      <circle onClick={this.handleClick} value="red" cx="550" cy="250" r="10"></circle>
+      <circle onClick={this.handleClick} value="yellow" cx="950" cy="250" r="10"></circle>
       </svg>
       <CircleSounds />
       <Link to={ "/taste"}>Next</Link>
