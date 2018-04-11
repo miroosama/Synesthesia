@@ -7,11 +7,12 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from 'redux-thunk'
 import circleReducer from './reducers/reducer'
+import shapeTimeReducer from './reducers/shapeTimeReducer'
 import foodToPlace from './reducers/foodToPlace'
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css';
 
-const rootReducer = combineReducers({color: circleReducer, foodPlaces: foodToPlace})
+const rootReducer = combineReducers({color: circleReducer, foodPlaces: foodToPlace, shapeTime: shapeTimeReducer})
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(

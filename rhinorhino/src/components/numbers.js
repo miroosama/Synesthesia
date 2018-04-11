@@ -1,10 +1,16 @@
 import React from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
+import { connect } from "react-redux"
+import { shapeTime } from '../actions/actions'
+
+
+
 
 class Numbers extends React.Component {
   constructor(props, context) {
     super(props, context);
+
 
     // construct the position vector here, because if we use 'new' within render,
     // React will think that things have changed when they have not.
@@ -46,6 +52,7 @@ class Numbers extends React.Component {
 
     this.state = {
       coneRotation: new THREE.Euler(),
+      time: 0
     };
 
     this._onAnimate = () => {
@@ -64,11 +71,32 @@ class Numbers extends React.Component {
     };
   }
 
+
   handleClick = (e) => {
-    // console.log(e.screenX, e.screenY)
+    console.log(e.screenX, e.screenY)
+    if(e.screenX >= 800 && e.screenX <= 900 && e.screenY >= 400 && e.screenY <= 500){
+      console.log("YERRRRRR")
+      this.props.shapeTime(this.state.time)
+    }
   }
 
+  componentDidMount() {
+      this.timer = setInterval(this.tick, 1000);
+    }
+  componentWillUnmount() {
+      this.clearInterval(this.timer);
+    }
+  tick = () => {
+      this.setState({
+        time: this.state.time + 1
+      });
+    }
+
+
+
   render() {
+    console.log(this.state.time)
+    console.log(this.props)
     const width = window.innerWidth * 1; // canvas width
     const height = window.innerHeight * 1; // canvas height
 let depth = this.props.shapeSpeed/10
@@ -683,8 +711,17 @@ let depth = this.props.shapeSpeed/10
         </mesh>
       </scene>
     </React3>
+
   </div>);
   }
 }
 
-export default Numbers;
+const mapStateToProps = state => {
+return{
+  color: state.color,
+  foodPlaces: state.foodPlaces,
+  shapeTime: state.shapeTime
+}
+}
+
+export default connect(mapStateToProps, { shapeTime })(Numbers);

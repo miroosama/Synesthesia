@@ -16,3 +16,10 @@ export const foodPlace = (food, place) =>{
     }
   }
 }
+
+export const shapeTime = (time) => {
+  return{
+    type: "ADD_TIME",
+    payload: time
+  }
+}

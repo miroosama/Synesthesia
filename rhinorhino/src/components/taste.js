@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { Grid, Dropdown, Menu } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { foodPlace } from '../actions/actions'
+import { Link } from 'react-router-dom'
 
 class Taste extends Component{
 
@@ -42,6 +43,7 @@ console.log(this.props)
           </Menu>
           </Grid.Column>
         </Grid.Row>
+        <Link to={ "/numbers"}>Next</Link>
       </Grid>
     )
   }
