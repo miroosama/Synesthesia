@@ -5,6 +5,8 @@ import CircleSounds from './components/circleSounds'
 import Taste from './components/taste'
 import Data from './components/data'
 import Numbers from './components/numbers'
+import SignUp from './components/signup'
+import Login from './components/login'
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
 
@@ -13,7 +15,9 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={Circles}  />
+          <Route exact path="/" component={Login}  />
+          <Route exact path="/signup" component={SignUp}  />
+          <Route exact path="/circles" component={Circles}  />
           <Route path="/taste" component={Taste} />
           <Route path="/numbers" component={Numbers} />
           <Route path="/data" component={Data} />
