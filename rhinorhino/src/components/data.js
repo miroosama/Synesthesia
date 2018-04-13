@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import {withFauxDOM} from 'react-faux-dom'
 import { connect } from "react-redux"
 import User from "./data"
+import { logoutUser } from '../actions/actions'
 
 class Data extends Component{
 
@@ -39,9 +40,14 @@ for (let i = 0; i < mockData.length; i++){
   }
 }
 
+handleSubmit = () => {
+  this.props.logoutUser()
+  this.props.history.push("/")
+}
+
 
   render(){
-    // console.log(this.props)
+    console.log(this.props)
     // let circle1 = d3.select("circle:nth-child(1n)")
     // circle1.style("fill", "royalblue")
     // circle1.attr("r", 50)
@@ -51,6 +57,7 @@ for (let i = 0; i < mockData.length; i++){
       {this.makeLines()}
       </svg>
       {this.state.clicked ? {Data} : null}
+      <button onClick={this.handleSubmit}>Log Out</button>
       </div>
     )
   }
@@ -62,7 +69,7 @@ return{
 }
 }
 
-export default connect(mapStateToProps)(withFauxDOM(Data))
+export default connect(mapStateToProps, { logoutUser })(withFauxDOM(Data))
 
 const mockData = [
   {user: {

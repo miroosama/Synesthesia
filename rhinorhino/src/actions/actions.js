@@ -40,7 +40,8 @@ export const signUp = (username, password, birthplace, age, history) => {
       dispatch({
         type: "GET_USER",
         payload: response.user
-      }, history.push('/circles'))
+      })
+      history.push('/circles')
     })
   }
 }
@@ -62,11 +63,36 @@ export const logIn = (username, password, history) => {
       } else {
         console.log(response)
       localStorage.setItem("token", response.jwt)
+      console.log(history)
       dispatch({
         type: "GET_USER",
         payload: response.user
-      }, history.push('/circles'))
+      })
+      history.push('/circles')
       }
     })
   }
 }
+
+export const getUser = (jwt) => {
+  return function(dispatch){
+    fetch("http://localhost:3000/get_user", {
+      headers: {
+        "Authorization": jwt
+      }
+    })
+    .then(res => res.json())
+    .then(response => {
+      dispatch({
+        type: "GET_USER",
+        payload: response.user
+      })
+    })
+  }
+}
+
+
+export const logoutUser = () => {
+  localStorage.removeItem('token');
+  return { type: 'LOGOUT_USER' };
+};

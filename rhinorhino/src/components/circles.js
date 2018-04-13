@@ -8,11 +8,15 @@ import { Route, Switch, Link } from 'react-router-dom'
 
 class Circles extends Component{
   componentDidMount () {
+    if(!this.props.currentUser){
+      this.props.history.push("/")
+    } else {
     const faux = this.props.connectFauxDOM('div', 'circle')
     d3.select(faux)
       .append('div')
       .html('Hello World!')
     this.props.animateFauxDOM(800)
+    }
   }
 
 
@@ -61,7 +65,8 @@ handleClick = (e) => {
 
 const mapStateToProps = state => {
 return{
-  color: state.color
+  color: state.color,
+  currentUser: state.user.currentUser
 }
 }
 

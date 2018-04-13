@@ -6,6 +6,11 @@ import { foodPlace } from '../actions/actions'
 import { Link } from 'react-router-dom'
 
 class Taste extends Component{
+  componentDidMount () {
+    if(!this.props.currentUser){
+      this.props.history.push("/")
+    }
+  }
 
   handleSelect = (e, { value, name }) => {
     e.preventDefault()
@@ -51,7 +56,8 @@ console.log(this.props)
 
 const mapStateToProps = state => {
 return{
-  foodPlaces: state.foodPlaces
+  foodPlaces: state.foodPlaces,
+  currentUser: state.user.currentUser
   }
 }
 

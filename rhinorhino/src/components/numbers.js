@@ -71,10 +71,16 @@ class Numbers extends React.Component {
     };
   }
 
+  componentDidMount () {
+    if(!this.props.currentUser){
+      this.props.history.push("/")
+    }
+  }
+
 
   handleClick = (e) => {
     console.log(e.screenX, e.screenY)
-    if(e.screenX >= 800 && e.screenX <= 900 && e.screenY >= 400 && e.screenY <= 500){
+    if(e.screenX >= 400 && e.screenX <= 500 && e.screenY >= 400 && e.screenY <= 500){
       console.log("YERRRRRR")
       this.props.shapeTime(this.state.time)
     }
@@ -720,7 +726,8 @@ const mapStateToProps = state => {
 return{
   color: state.color,
   foodPlaces: state.foodPlaces,
-  shapeTime: state.shapeTime
+  shapeTime: state.shapeTime,
+  currentUser: state.user.currentUser
 }
 }
 
