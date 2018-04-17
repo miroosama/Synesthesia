@@ -30,6 +30,7 @@ handleClick = (e) => {
   e.preventDefault()
   // console.log(e.target.attributes[0].value)
   this.props.selectColor(e.target.attributes[0].value)
+  this.props.history.push("/taste")
 }
 //
 // handleNext = (e) => {
@@ -48,6 +49,9 @@ handleClick = (e) => {
     let circle3 = d3.select("circle:nth-child(3n)")
     circle3.style("fill", "yellow")
     circle3.attr("r", 125)
+    circle1.transition()
+    .duration(1250)
+    .attr('opacity', 1)
     console.log(this.props)
     return(
       <div>
@@ -57,11 +61,12 @@ handleClick = (e) => {
       <circle onClick={this.handleClick} value="yellow" cx="950" cy="250" r="10"></circle>
       </svg>
       <CircleSounds />
-      <Link to={ "/taste"}>Next</Link>
       </div>
     )
   }
 }
+
+// <Link to={ "/taste"}>Next</Link>
 
 const mapStateToProps = state => {
 return{

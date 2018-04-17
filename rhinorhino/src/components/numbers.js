@@ -83,15 +83,35 @@ class Numbers extends React.Component {
     if(e.screenX >= 400 && e.screenX <= 500 && e.screenY >= 400 && e.screenY <= 500){
       console.log("YERRRRRR")
       this.props.shapeTime(this.state.time)
+      this.postData()
     }
   }
+
+  postData = () => {
+
+  let options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({color: `${this.props.color.color.color}`, food_place: `[{${this.props.foodPlaces.foodPlaces[0].foodPlace.food}: ${this.props.foodPlaces.foodPlaces[0].foodPlace.place}}, {${this.props.foodPlaces.foodPlaces[1].foodPlace.food}: ${this.props.foodPlaces.foodPlaces[1].foodPlace.place}},
+  {${this.props.foodPlaces.foodPlaces[2].foodPlace.food}: ${this.props.foodPlaces.foodPlaces[2].foodPlace.place}}, {${this.props.foodPlaces.foodPlaces[3].foodPlace.food}: ${this.props.foodPlaces.foodPlaces[3].foodPlace.place}} ]`, shape_time: `${this.state.time}`, user_id: `${this.props.currentUser.id}` })
+};
+fetch(`http://localhost:3000/api/v1/results`, options)
+.then(res => res.json())
+.then(console.log)
+this.props.history.push("/data")
+}
+
+
 
   componentDidMount() {
       this.timer = setInterval(this.tick, 1000);
     }
-  componentWillUnmount() {
-      this.clearInterval(this.timer);
-    }
+  // componentWillUnmount() {
+  //     this.clearInterval(this.timer);
+  //   }
   tick = () => {
       this.setState({
         time: this.state.time + 1
