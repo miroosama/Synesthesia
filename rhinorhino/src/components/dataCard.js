@@ -24,18 +24,10 @@ class DataCard extends Component {
     let color = `${info.color}`
     let food = `${info.food_place}`
     let time = `${info.shape_time}`
-
-    let circle2 = d3.select("circle:nth-child(2n)")
-    circle2.style("fill", `${info.color}`)
-  d3.select("circle:nth-child(1n)")
-    .transition()
-    .attr("delay", function(d,i){return 1000*i})
-    .attr("duration", function(d,i){return 1000*(i+1)})
-    .attr("cy", function(d,i){return 30*(i+1)})
-
+    let circle1 = d3.select("circle")
+    circle1.style("fill", `${info.color}`)
     return(
       <svg>
-        <circle cx={900} cy={50} r="50"></circle>
         <circle cx={900} cy={50} r="400"></circle>
         <text x="900" y="50" fontFamily="sans-serif" fontSize="60px" fill="white">{name}</text>
         <text x="900" y="100" fontFamily="sans-serif" fontSize="30px" fill="white">{detail}</text>

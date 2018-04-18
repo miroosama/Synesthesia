@@ -52,7 +52,8 @@ class Numbers extends React.Component {
 
     this.state = {
       coneRotation: new THREE.Euler(),
-      time: 0
+      time: 0,
+      found: false
     };
 
     this._onAnimate = () => {
@@ -80,7 +81,7 @@ class Numbers extends React.Component {
 
   handleClick = (e) => {
     console.log(e.screenX, e.screenY)
-    if(e.screenX >= 400 && e.screenX <= 500 && e.screenY >= 400 && e.screenY <= 500){
+    if(e.screenX >= 660 && e.screenX <= 700 && e.screenY >= 470 && e.screenY <= 510){
       console.log("YERRRRRR")
       this.props.shapeTime(this.state.time)
       this.postData()
@@ -88,7 +89,7 @@ class Numbers extends React.Component {
   }
 
   postData = () => {
-
+  if(this.state.found == false){
   let options = {
   method: "POST",
   headers: {
@@ -101,6 +102,11 @@ class Numbers extends React.Component {
 fetch(`http://localhost:3000/api/v1/results`, options)
 .then(res => res.json())
 .then(res => this.props.history.push("/data"))
+  this.setState({
+    found:true
+  })
+}
+
 }
 
 
