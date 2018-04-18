@@ -9,7 +9,8 @@ class Data extends Component{
 
 state = {
   clicked: false,
-  data: ""
+  data: "",
+  matchNum: null
 }
 
   componentDidMount () {
@@ -30,14 +31,16 @@ state = {
 
   handleClick = (e) => {
     this.setState({
-      clicked: true
+      clicked: true,
+      matchNum: e.target.attributes[0].value
     })
     console.log(e.target.attributes[0].value)
-    this.dataCard(e.target.attributes[0].value)
+    // this.dataCard(e.target.attributes[0].value)
   }
 
 makeLines = () => {
   let num = 200
+  let num1 = 200
   let num2 = 100
   // return daata.map(user => {
   //   num += 50
@@ -53,10 +56,14 @@ let arr = []
   }
 
   return arr.map(user => {
-    num += 50
     console.log("hey", user)
-    // if cx == 720 then num2 += 50
-    return <circle onClick={this.handleClick} value={user.id} cx={num} cy={num2} r="20"></circle>
+    if(num1 >= 650){
+      num2 += 50
+      num1 = 250
+    }  else {
+      num1 += 50
+    }
+    return <circle onClick={this.handleClick} value={user.id} cx={num1} cy={num2} r="20"></circle>
   })
 }
 
@@ -74,23 +81,20 @@ handleMouse = (e) => {
     .on("wheel.zoom", null);
 }
 
-dataCard = (num) => {
-  let match = this.state.data.find(item=>{
-    return item.id == num
-  })
-return <circle onClick={this.handleClick} value={match} cx={50} cy={50} r="500"></circle>
-}
 
   render(){
     console.log(this.props)
-    // let circle1 = d3.select("circle:nth-child(1n)")
-    // circle1.style("fill", "royalblue")
+  //   if(this.state.clicked){
+  //   let circle1 = d3.select("circle")
+  //   circle1.style("fill", "royalblue")
+  // }
     // circle1.attr("r", 50)
+    let dataCard = <DataCard data={this.state.data} match={this.state.matchNum} />
     return(
       <div>
-      <svg width="720" height="720">
+      <svg width="1300" height="720">
+      {this.state.clicked ? dataCard : <circle cx={50} cy={50} r="1"></circle> }
       {this.makeLines()}
-       {this.state.clicked ? this.dataCard() : null}
       </svg>
       <button onClick={this.handleSubmit}>Log Out</button>
       </div>
@@ -105,7 +109,11 @@ return{
 }
 
 export default connect(mapStateToProps, { logoutUser })(withFauxDOM(Data))
-
+// {this.dataCard()}
+// {this.addText()}
+// {this.dataCard()}
+// {this.addText()}
+// {this.state.clicked ? this.dataCard() : null}
 // const mockData = [
 //   {user: {
 //     name: "zero",
@@ -119,3 +127,31 @@ export default connect(mapStateToProps, { logoutUser })(withFauxDOM(Data))
 //     foodPlaces: [{food:"salad", place:"gym"}, {food:"candy", place:"library"}, {food:"pizza", place:"shopping"}, {food:"fruit", place:"bar"}]
 //   }}
 // ]
+
+// dataCard = (num) => {
+//   if(this.state.clicked){
+//   let match = this.state.data.find(item=>{
+//     return item.id == num
+//   })
+//   console.log("send", match )
+// // this.addText(match)
+//     return <circle onClick={this.handleClick} value={match} cx={50} cy={50} r="500"></circle>
+// } else {
+//     return <circle cx={50} cy={50} r="1"></circle>
+//   }
+// }
+
+// addText = (match) => {
+//   console.log(match)
+//   if(match == undefined){
+//     match = "nothing"
+//   } else {
+//   if(this.state.clicked){
+//     return <text x="50" y="50" fontFamily="sans-serif" fontSize="90px" fill="white">`${match}`</text>
+//
+//   }
+//   else{
+//     null
+//     }
+//   }
+// }

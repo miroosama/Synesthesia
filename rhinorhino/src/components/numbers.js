@@ -100,8 +100,7 @@ class Numbers extends React.Component {
 };
 fetch(`http://localhost:3000/api/v1/results`, options)
 .then(res => res.json())
-.then(console.log)
-this.props.history.push("/data")
+.then(res => this.props.history.push("/data"))
 }
 
 

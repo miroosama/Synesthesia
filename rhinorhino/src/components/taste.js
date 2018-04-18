@@ -6,6 +6,7 @@ import { foodPlace } from '../actions/actions'
 import { Link } from 'react-router-dom'
 
 class Taste extends Component{
+
   componentDidMount () {
     if(!this.props.currentUser){
       this.props.history.push("/")
@@ -29,22 +30,22 @@ console.log(this.props)
           <div>
           <ReactPlayer url='https://www.youtube.com/watch?v=vbGv7GVvLiE' playing />
           <Menu compact>
-            <Dropdown onChange={this.handleSelect} text='Dropdown' name="Salad" options={options} simple item />
+            <Dropdown onChange={this.handleSelect} placeholder="Choose One" name="Salad" options={options} simple item />
           </Menu>
           </div>
           <ReactPlayer url='https://www.youtube.com/watch?v=fXUTFpMp9_Q' playing />
           <Menu compact>
-            <Dropdown onChange={this.handleSelect} text='Dropdown' name="Pizza" options={options} simple item />
+            <Dropdown onChange={this.handleSelect} placeholder="Choose One" name="Pizza" options={options} simple item />
           </Menu>
           </Grid.Column>
           <Grid.Column>
           <ReactPlayer url='https://www.youtube.com/watch?v=KyhLtqlKtYY' playing />
           <Menu compact>
-            <Dropdown onChange={this.handleSelect} text='Dropdown' name="Candy" options={options} simple item />
+            <Dropdown onChange={this.handleSelect} placeholder="Choose One" name="Candy" options={options} simple item />
           </Menu>
           <ReactPlayer url='https://www.youtube.com/watch?v=esNiJPOguyc' playing />
           <Menu compact>
-            <Dropdown onChange={this.handleSelect} text='Dropdown' name="Fruit" options={options} simple item />
+            <Dropdown onChange={this.handleSelect} placeholder="Choose One" name="Fruit" options={options} simple item />
           </Menu>
           </Grid.Column>
         </Grid.Row>

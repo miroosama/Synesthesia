@@ -25,7 +25,7 @@ playNote = () => {
   sound.connect(x)
   console.log(sound)
   sound.start(context.currentTime);
-  sound.stop(context.currentTime + 0.5);
+  sound.stop(context.currentTime + 1);
 
 }
 
