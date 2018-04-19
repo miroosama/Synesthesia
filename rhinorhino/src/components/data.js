@@ -5,12 +5,16 @@ import { connect } from "react-redux"
 import User from "./data"
 import { logoutUser } from '../actions/actions'
 import DataCard from './dataCard'
+import ColorFilter from './colorFilter'
+
 class Data extends Component{
 
 state = {
   clicked: false,
   data: "",
-  matchNum: null
+  matchNum: null,
+  colorFilter: false,
+  color: ""
 }
 
   componentDidMount () {
@@ -63,6 +67,13 @@ let arr = []
     }  else {
       num1 += 50
     }
+    d3.selectAll("circle")
+    .classed('item--transitioning', true)
+    .style('fill', 'white')
+    .attr("r", 30)
+    .transition().duration(750)
+    .attr("r", 20)
+    .style('fill', 'black')
     return <circle onClick={this.handleClick} value={user.id} cx={num1} cy={num2} r="20"></circle>
   })
 }
@@ -81,7 +92,19 @@ handleMouse = (e) => {
     .on("wheel.zoom", null);
 }
 
-
+colorSubmit = (e) => {
+  if(e.target.value == "all"){
+    this.setState({
+      colorFilter:false
+    })
+  } else{
+  console.log("COLOR", e.target.value)
+  this.setState({
+    colorFilter: true,
+    color: e.target.value
+    })
+  }
+}
   render(){
     console.log(this.props)
   //   if(this.state.clicked){
@@ -90,12 +113,19 @@ handleMouse = (e) => {
   // }
     // circle1.attr("r", 50)
     let dataCard = <DataCard data={this.state.data} match={this.state.matchNum} />
+    let colorShow = <ColorFilter data={this.state.data} color={this.state.color} onClick={this.handleClick}/>
     return(
       <div>
       <svg width="1300" height="720">
-      {this.state.clicked ? dataCard : <circle cx={50} cy={50} r="1"></circle> }
-      {this.makeLines()}
+      {this.state.clicked ? dataCard : <rect cx={50} cy={50} r="1"></rect> }
+      {this.state.colorFilter ? colorShow : this.makeLines()}
       </svg>
+      <select onChange={this.colorSubmit}>
+      <option value="all">All</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="blue">Blue</option>
+      </select>
       <button onClick={this.handleSubmit}>Log Out</button>
       </div>
     )

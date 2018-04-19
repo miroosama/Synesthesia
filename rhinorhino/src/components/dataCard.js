@@ -24,11 +24,11 @@ class DataCard extends Component {
     let color = `${info.color}`
     let food = `${info.food_place}`
     let time = `${info.shape_time}`
-    let circle1 = d3.select("circle")
-    circle1.style("fill", `${info.color}`)
+    let rect1 = d3.select("rect")
+    rect1.style("fill", `${info.color}`)
     return(
       <svg>
-        <circle cx={900} cy={50} r="400"></circle>
+        <rect x={575} y={5} width="700" height="350"></rect>
         <text x="900" y="50" fontFamily="sans-serif" fontSize="60px" fill="white">{name}</text>
         <text x="900" y="100" fontFamily="sans-serif" fontSize="30px" fill="white">{detail}</text>
         <text x="900" y="150" fontFamily="sans-serif" fontSize="20px" fill="white">{color}</text>
